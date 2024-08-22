@@ -224,3 +224,25 @@ summarise_data <- function(expanded, result_df) {
   return(summary_df)
 }
 
+#####character completeness
+# Function to calculate the proportion of unambiguous states
+char_proportion <- function(data) {
+  # Initialize a vector to store the proportions
+  proportions <- numeric(nrow(data))
+  
+  # Loop through each row of the data
+  for (i in 1:nrow(data)) {
+    # Count the total number of characters in the row
+    total_characters <- ncol(data)
+    
+    # Count the number of unambiguous characters 
+    unambiguous_characters <- sum(data[i, ] != '-' & data[i, ] != '?')
+
+    proportions <- unambiguous_characters / total_characters
+  }
+  
+  # Return the proportions
+  return(proportions)
+}
+
+
