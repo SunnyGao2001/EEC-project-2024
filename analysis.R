@@ -381,3 +381,10 @@ ggtree(tplot, aes(color = RI),size = 1) +
              size = 2.4, hjust = 1.2, vjust = 0) +
   geom_tiplab(size = 2, align = F) +
   theme(legend.position = "right")
+
+#getting the completeness of the character state data
+m.pro <- char_proportion(mchar) #0.870
+b.pro <- char_proportion(bchar) #0.142
+s.pro <-char_proportion(schar) #0.857
+t.pro <- char_proportion(tchar) #0.163
+g.char <- char_proportion(gchar) #0.633
